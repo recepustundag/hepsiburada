@@ -241,14 +241,7 @@ body {
         }
 
         img {
-          width: 70px;
-          border: 1px solid $whisper;
-          @include border-radius(4px);
-          padding: 7px;
-        }
-
-        p {
-          font-size: 12px;
+          width: 75;
           color: $charcoal;
           line-height: 18px;
           padding-right: 35px;
