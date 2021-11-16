@@ -32,24 +32,24 @@ const productReducer = (state = initialState, action) => {
       let res = state.products;
 
       if (state.filters["brand"] !== "" && state.filters["color"] !== "") {
-        res = res.filter((obj) => obj.color == state.filters["color"] && obj.brand == state.filters["brand"]);
+        res = res.filter((obj) => obj.color === state.filters["color"] && obj.brand === state.filters["brand"]);
       } else if (state.filters["brand"] !== "") {
-        res = res.filter((obj) => obj["brand"] == state.filters["brand"]);
+        res = res.filter((obj) => obj["brand"] === state.filters["brand"]);
       } else if (state.filters["color"] !== "") {
-        res = res.filter((obj) => obj["color"] == state.filters["color"]);
+        res = res.filter((obj) => obj["color"] === state.filters["color"]);
       }
 
       if (res != null) {
         res = res.filter(function (item) {
-          return item.title.toLowerCase().indexOf(action.payload.toLowerCase()) != -1;
+          return item.title.toLowerCase().indexOf(action.payload.toLowerCase()) !== -1;
         });
       } else {
         res = state.searchList.filter(function (item) {
-          return item.title.toLowerCase().indexOf(action.payload.toLowerCase()) != -1;
+          return item.title.toLowerCase().indexOf(action.payload.toLowerCase()) !== -1;
         });
       }
 
-      if (res.length == 0) {
+      if (res.length === 0) {
         state.notFound = true;
         localStorage.setItem("notFound", true);
       }

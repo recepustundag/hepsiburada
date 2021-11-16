@@ -19,7 +19,7 @@ const Pagination = ({data}) => {
       {
         pageNumber &&
         [...Array(pageNumber)].map((x, i) => {
-          return <div data-testid="paginationPageLink" key={i} onClick={() => handleChangePage(i + 1)} className={`link${currentPage == i + 1 ? ' active' : ''}`}>{i + 1}</div>
+          return <div data-testid="paginationPageLink" key={i} onClick={() => handleChangePage(i + 1)} className={`link${currentPage === i + 1 ? ' active' : ''}`}>{i + 1}</div>
         })
       }
       <div onClick={() => handleChangePage(currentPage + 1)} className="link next" data-testid="paginationNextLink"> {`>`} </div>

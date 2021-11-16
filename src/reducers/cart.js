@@ -10,7 +10,7 @@ const cartReducer = (state = initialState, action) => {
     case types.ADD_TO_CART:
       const index = state.cart.findIndex((item) => item.id === action.payload.id);
 
-      if (index == -1) {
+      if (index === -1) {
         state.cart = [...state.cart, action.payload];
         let storeCard = JSON.parse(localStorage.getItem("cart") ?? "[]");
         storeCard.push(action.payload);
@@ -25,10 +25,10 @@ const cartReducer = (state = initialState, action) => {
         cart: state.cart.sort((a, b) => new Moment(b.added_date, "YYYY-MM-DD HH:mm:ss") - new Moment(a.added_date, "YYYY-MM-DD HH:mm:ss")),
       };
     case types.REMOVE_TO_CART:
-      localStorage.setItem("cart", JSON.stringify(state.cart.filter((item) => item.id != action.payload)));
+      localStorage.setItem("cart", JSON.stringify(state.cart.filter((item) => item.id !== action.payload)));
       return {
         ...state,
-        cart: state.cart.filter((item) => item.id != action.payload),
+        cart: state.cart.filter((item) => item.id !== action.payload),
       };
     default:
       return {

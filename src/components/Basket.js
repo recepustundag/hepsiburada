@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import BadgeButton from './BadgeButton'
 import Card from './Card'
 
@@ -9,10 +9,6 @@ import { useSelector } from 'react-redux';
 const Basket = () => {
   const cart = useSelector(state => state?.cart.cart);
   const [basketClass, setBasketClass] = useState('');
-
-  useEffect(() => {
-    
-  }, [useSelector])
 
   const addClass = (e) => {
     if(e.target.classList.contains('active')) setBasketClass('')
