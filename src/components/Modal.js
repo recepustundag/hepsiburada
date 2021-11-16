@@ -9,7 +9,7 @@ const Modal = ({id}) => {
   return (
     <div id="open-modal" className="modal-window" data-testid="modalContainer">
       <div>
-        <a href="#" className="modal-close" data-testid="modalClosebutton">
+        <a href="/#" className="modal-close" data-testid="modalClosebutton">
           Kapat
         </a>
         <div className="title" data-testid="modalTitle">Ürünü silmek istediğinize emin misiniz?</div>
@@ -19,7 +19,7 @@ const Modal = ({id}) => {
         </p>
         <div className="modal-footer">
           <button onClick={() => dispatch(RemoveToCart(id))} data-testid="removeCartItem" >Evet</button>
-          <a href="#" className="cancel" data-testid="modalFooterCloseButton">Hayır</a>
+          <a href="/#" className="cancel" data-testid="modalFooterCloseButton">Hayır</a>
         </div>
       </div>
     </div>
